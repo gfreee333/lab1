@@ -1,8 +1,9 @@
 public class Hero {
 
-    private final int strength;
-    private final int agility;
-    private final int intelligence;
+
+    private static int strength;
+    private static int agility;
+    private static int intelligence;
 
     public Hero() { // TODO генерация случайных чисел работает нормально.
         strength = (int) (Math.random()*10) + 1;
@@ -16,9 +17,9 @@ public class Hero {
             System.out.println("ERROR");
            //TODO throw new OverloadedCharacteristicException();  добавь тоже исключение из своей лабы
 
-        this.strength = strength;
-        this.agility = agility;
-        this.intelligence = intelligence;
+        Hero.strength = strength;
+        Hero.agility = agility;
+        Hero.intelligence = intelligence;
     }
 
     private boolean characteristicIsOK(int strength, int agility, int intelligence) {
@@ -28,7 +29,7 @@ public class Hero {
             return false;
     }
 
-    public int getStrength() {
+    public static int getStrength() {
         return strength;
     }
 
